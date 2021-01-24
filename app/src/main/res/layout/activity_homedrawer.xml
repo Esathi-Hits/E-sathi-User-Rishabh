@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomedrawerActivity">
+
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <EditText
+        android:id="@+id/auto_suggest"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="8dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:elevation="30dp"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:imeOptions="actionSearch"
+        android:hint="Pickup"
+        android:inputType="textPersonName"
+        android:paddingStart="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <EditText
+        android:id="@+id/auto_suggest1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="8dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:elevation="30dp"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:imeOptions="actionSearch"
+        android:hint="Destination"
+        android:inputType="textPersonName"
+        android:paddingStart="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auto_suggest" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auto_suggest"
+        android:layout_below="@+id/auto_suggest" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auto_suggest1"
+        android:layout_below="@+id/auto_suggest" />
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/current_location1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/my_location"
+        android:elevation="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintTop_toTopOf="@id/auto_suggest"
+        app:layout_constraintEnd_toEndOf="@id/auto_suggest"/>
+
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/warning"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/current_location"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/my_location"
+        android:elevation="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintBottom_toTopOf="@+id/Distance_direction"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/Distance_direction"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="15dp"
+        android:elevation="40dp"
+        android:weightSum="100"
+        android:background="#C0C0C0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="55"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:weightSum="100">
+            <TextView
+                android:id="@+id/pl_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="60"
+                android:text="Name"
+                android:paddingStart="15dp"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                tools:ignore="NestedWeights" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="40">
+                <ImageView
+                    android:layout_marginStart="15dp"
+                    android:layout_width="24dp"
+                    android:src="@drawable/directions_walk"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:id="@+id/Distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="t"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center"
+                    android:textColor="#D31027"
+                    android:textSize="15sp"/>
+                <ImageView
+                    android:layout_marginStart="15dp"
+                    android:layout_width="24dp"
+                    android:src="@drawable/timer"
+                    android:layout_height="match_parent"/>
+
+                <TextView
+                    android:id="@+id/duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="t"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="5"
+            android:gravity="center"
+            android:layout_height="0dp">
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_height="1dp"
+                android:alpha="0.6"
+                android:background="@color/black"/>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="40"
+            android:background="@drawable/ripple">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nav"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_shade"
+                android:elevation="40dp"
+                android:text="Confirm Booking"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/estimated"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Estimated Fare :"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/nav"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/estimated_fare"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="t"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/estimated"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/confirm"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Confirm Location"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:background="@drawable/button_shade"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/Searching"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="15dp"
+        android:elevation="40dp"
+        android:weightSum="100"
+        android:background="#C0C0C0"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal">
+        <com.airbnb.lottie.LottieAnimationView
+
+            android:id="@+id/animation"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
+            android:layout_marginStart="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="radar.json"
+            app:lottie_loop="true"
+            tools:ignore="RtlSymmetry" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"
+            android:text="Searching\nyour Rider..." />
+
+    </LinearLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/Accepted"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="15dp"
+        android:elevation="40dp"
+        android:weightSum="100"
+        android:background="#C0C0C0"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal">
+        <com.airbnb.lottie.LottieAnimationView
+
+            android:id="@+id/animation2"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
+            android:layout_marginStart="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="tickdone.json"
+            app:lottie_loop="true"
+            tools:ignore="RtlSymmetry" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"
+            android:text="your rider confirmed\nenjoy your ride!" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/Not_found"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="15dp"
+        android:elevation="40dp"
+        android:weightSum="100"
+        android:background="#C0C0C0"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal">
+        <com.airbnb.lottie.LottieAnimationView
+
+            android:id="@+id/animation3"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
+            android:layout_marginStart="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="error.json"
+            app:lottie_loop="true"
+            tools:ignore="RtlSymmetry" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"
+            android:text="Sorry Currently No rider Found\nPlease Try after sometime" />
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

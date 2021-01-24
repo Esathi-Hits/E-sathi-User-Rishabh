@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">E-Sathi User</string>
+    <string name="todo">TODO</string>
+    <string name="e_sathi_user">E-Sathi User</string>
+    <string name="name">Name</string>
+    <string name="select_profile_image">Select Profile Image</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="desc">Desc</string>
+    <string name="textview">Title</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="register">Register</string>
+    <string name="pass">Password</string>
+    <string name="enter_phone_no">Enter Phone no.</string>
+    <string name="code">+91-</string>
+    <string name="generate_otp">Generate Otp</string>
+    <string name="back">Back</string>
+    <string name="otp_verificaton">Otp verification</string>
+    <string name="enter_6_digit_otp_here_for_verification">Enter 6 digit code send to your mobile number</string>
+    <string name="resend_otp">Resend Otp</string>
+    <string name="verify">Verify</string>
+    <string name="login">Login</string>
+    <string name="passconfirm">Confirm Password</string>
+    <string name="resendverificationlink">Resend verification link</string>
+    <string name="LogintomyAccount">Login to my Account</string>
+    <string name="entermobile">Enter Mobile Number</string>
+    <string name="verifyotp">Verify Otp</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="send">Send</string>
+    <string name="ok">OK</string>
+    <string name="search">Search</string>
+    <string name="pleaseCheckInternetConnection">Please check Internet connection</string>
+    <string name="direction">Direction</string>
+    <string name="navigate">Navigate</string>
+    <string name="recenter">Recenter</string>
+    <string name="about_text">
+        1)Select your starting point and destination in the search box.\n
+        2)Click on the ride and fair you want to select.\n
+        3)Tap CONFIRM and your ride will be available asap.\n
+        4)After reaching your destination you can pay using the e-Wallet or cash,as you prefer.
+  <!--  <ul>
+        <li>Select your starting point and destination in the search box.</li>
+        <li>Click on the ride and fair you want to select.</li>
+        <li>Tap CONFIRM and your ride will be available asap.</li>
+        <li>After reaching your destination you can pay using the e-Wallet or cash , as you prefer.</li>
+    </ul>-->
+    </string>
+    <string name="update">Update</string>
+    <string name="radio_male">Male</string>
+    <string name="radio_female">Female</string>
+    <string name="submit">Submit</string>
+    <string name="confirmride">Confirm Ride</string>
+</resources>

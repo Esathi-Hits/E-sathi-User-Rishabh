@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SignOutFragment">
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/logoutbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias=".42"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:elevation="10dp"
+        android:translationZ="10dp"
+        android:stateListAnimator="@null"
+        android:text="LogOut"
+        android:padding="8dp"
+        android:gravity="center"
+        style="@style/ButtonStyle"
+        tools:ignore="OnClick" />
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+    <ProgressBar
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/signoutprogress"
+        android:visibility="gone"/>
+</RelativeLayout>
+</FrameLayout>
